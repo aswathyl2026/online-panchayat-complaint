@@ -11,7 +11,7 @@ function Home() {
                     <div className="col-lg-8 rounded shadow p-5 text-center text-light" style={{ background: 'rgba(128, 81, 54,0.7)' }}>
                         <p className='fs-5'> <b>The Online Complaint Management System</b> for Panchayat is a web-based application developed to provide an efficient platform for citizens to report local issues and complaints directly to the Panchayat authorities. In many rural and local areas, citizens face problems such as road damage, water supply issues, waste management problems, and street light failures. Traditionally, these complaints are reported manually by visiting the Panchayat office, which can be time-consuming and inefficient.</p>
 
-                        <Link to={"/login"} className='btn btn-dark'>Login</Link>
+                        <Link to={"/login"} className='btn btn-dark btn-lg'>Login</Link>
 
 
                     </div>

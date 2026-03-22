@@ -8,6 +8,7 @@ import Registration from './pages/Registration'
 import UserPage from './pages/UserPage'
 import AdminDashboard from './pages/AdminDashboard'
 import PageNotFound from './pages/PageNotFound'
+import ViewComplaints from './components/ViewComplaints'
 
 function App() {
 
@@ -17,11 +18,14 @@ function App() {
   <Header/>
     <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/*" element={<PageNotFound/>}/>
+        
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Registration/>}/>
-        <Route path="login/user/:name" element={<UserPage/>}/>
-        <Route path="login/admin/:name" element={<AdminDashboard/>}/>
+        <Route path="/login/user/:name/:id" element={<UserPage/>}/>
+        <Route path="/login/admin/:name" element={<AdminDashboard/>}/>
+        <Route path="/view/:name/:id" element={<ViewComplaints />} />
+        <Route path="/view/:adm/:name/:id" element={<ViewComplaints />} />
+       <Route path="/*" element={<PageNotFound/>}/>
      </Routes>
    <Footer/>
    </>

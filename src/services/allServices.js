@@ -7,3 +7,15 @@ export const getUserAPI=async()=>{
 export const registerUserAPI=async(registerData)=>{
     return await apiService('POST','/users',registerData)
 }
+
+export const getAllComplaintAPI=async()=>{
+    return await apiService('GET','/complaints',{})
+}
+
+export const getComplaintAPI=async(id)=>{
+    return await apiService('GET',`/complaints/${id}`,{})
+}
+
+export const updateComplaintAPI=async(id,updateData)=>{
+    return await apiService('PUT',`/complaints/${id}`,updateData)
+}

@@ -23,7 +23,7 @@ function Login() {
         navigate(`/login/admin/${validUser.name}`)
          }
          else{
-          navigate(`/login/user/${validUser.name}`)
+          navigate(`/login/user/${validUser.name}/${validUser.id}`)
          }
       }
       else {
