@@ -26,17 +26,17 @@ const allComplaintsFun = async () => {
 }
   
   return (
-    <>
-      <div className="row align-items-center justify-content-between m-5">
+    <div style={{ height: '100vh', backgroundImage: 'url("/pan4.jpeg")', backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
+      <div className="row align-items-center justify-content-between m-3" >
 
         <div className="col-lg-6">
-          <h5>
+          <h5 className='m-1'>
             Welcome: <span className="text-success">{name?.toUpperCase()}</span>
           </h5>
         </div>
 
         <div className="col-lg-2 text-end">
-          <Link to="/" className="text-decoration-none text-danger fw-bold">Logout</Link>
+          <Link to="/" className="text-decoration-none text-danger m-2 btn btn-lg fw-bold">Logout</Link>
         </div>
 
 
@@ -63,7 +63,7 @@ const allComplaintsFun = async () => {
                 </div>
                 {
                   complaint.status=="completed" &&(
-                   <button onClick={()=>deleteData(complaint.id)} className='btn btn-danger'>Delete</button>
+                   <button className='btn btn-danger'>Delete</button>
                   )
                 }
                  
@@ -76,7 +76,9 @@ const allComplaintsFun = async () => {
        
 
       </div>
-    </>
+        
+    </div>
+    
   )
 }
 

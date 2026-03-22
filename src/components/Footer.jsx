@@ -9,7 +9,7 @@ import { FaWhatsapp } from "react-icons/fa";
 function Footer() {
   return (
     
-    <div className='d-flex flex-column justify-content-center align-items-center text-white pt-4' style={{height:'150px',backgroundColor:'#1c100a'}}>
+    <div className='d-flex flex-column justify-content-center align-items-center text-white pt-4' style={{height:'125px',backgroundColor:'#1c100a'}}>
      <h3 className='pb-3'>Contact Us</h3>
      <div className='pb-0'> <MdAttachEmail/> arattupuzhagp@gmail.com
       <p className='text-center'><FaPhoneAlt /> 145125425</p> 

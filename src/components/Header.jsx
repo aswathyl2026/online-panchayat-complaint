@@ -25,7 +25,7 @@ function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
            Online Complaint System
           </Typography>
-          
+             <h5 className='p-3 m-3'>ARATTUPUZHA GRAMA PANCHAYATH</h5>
           <Link to={"/"} style={{color:'white', fontSize:'40px'}}><FaHome/></Link>
         </Toolbar>
       </AppBar>
