@@ -26,7 +26,7 @@ const allComplaintsFun = async () => {
 }
   
   return (
-    <div style={{ height: '100vh', backgroundImage: 'url("/pan4.jpeg")', backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
+    <div style={{ height: '100%', backgroundImage: 'url("/pan4.jpeg")', backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
       <div className="row align-items-center justify-content-between m-3" >
 
         <div className="col-lg-6">

@@ -19,3 +19,10 @@ export const getComplaintAPI=async(id)=>{
 export const updateComplaintAPI=async(id,updateData)=>{
     return await apiService('PUT',`/complaints/${id}`,updateData)
 }
+
+export const addComplaintAPI=async(complaintData)=>{
+    return await apiService('POST','/complaints',complaintData)
+}
+export const deleteComplaintAPI=async(id)=>{
+    return await apiService('DELETE',`/complaints/${id}`)
+}

@@ -19,9 +19,11 @@ function Registration() {
 
       if (name && userid && password) {
         const res = await registerUserAPI(registerUser)
-        //console.log(res);
-
+        console.log(res);
+        if(res.status==201){
+        alert("Registered succesfully")
         navigate('/login')
+        }
       } else {
         alert("Fill all fields")
       }

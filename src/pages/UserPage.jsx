@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
-import { getAllComplaintAPI } from '../services/allServices';
+import { deleteComplaintAPI, getAllComplaintAPI } from '../services/allServices';
 import { IoIosCreate } from "react-icons/io";
 
 import ComplaintForm from '../components/ComplaintForm';
@@ -22,10 +22,14 @@ function UserPage() {
 
     }
   }
+  const deleteComplaint=async(id)=>{
+    await deleteComplaintAPI(id)
+    getMyComplaint()
+  }
 
   return (
     <>
-      <div style={{ height: '100vh', backgroundImage: 'url("/pan5.jpeg")', backgroundSize: 'cover', backgroundAttachment: 'fixed' }} >
+      <div style={{ height: '100%', backgroundImage: 'url("/pan5.jpeg")', backgroundSize: 'cover', backgroundAttachment: 'fixed' }} >
         <div className="row align-items-center justify-content-between">
           <div className="col-lg-3">
             <h5 className='m-2'>
@@ -46,7 +50,7 @@ function UserPage() {
 
         </div>
 
-        <div className="d-flex flex-wrap justify-content-center gap-4">
+        <div className=" container-fluid d-flex flex-wrap justify-content-center gap-4">
 
           {
             myComplaint.length > 0 ?
@@ -57,13 +61,22 @@ function UserPage() {
                   <div className="card-body">
                     <h5 className="card-title">{complaint.title}</h5>
                     <p className="card-text">{complaint.description}</p>
-                    <p className={complaint.status == "in progress" ? 'text text-warning' : 'text text-danger'}>{complaint.status}</p>
-                    <Link
+                    <p className={complaint.status == "completed" ? 'text text-success':complaint.status == "in progress" ? 'text text-warning' : 'text text-danger'}>{complaint.status}</p>
+                    
+                    <div className='d-flex justify-content-between'>
+                      <Link
                       to={`/view/${complaint.userid}/${complaint.id}`}
                       className='btn btn-outline-warning'
                     >
                       Open
                     </Link>
+                    {
+                      complaint.status==="completed" &&(
+                        <button className='btn btn-success ' onClick={()=>deleteComplaint(complaint.id)}>Delete</button>
+                      )
+
+                    }
+                    </div>
 
                   </div>
 
@@ -76,7 +89,7 @@ function UserPage() {
 
 
         </div>
-        <ComplaintForm myComplaint={myComplaint} setMyComplaint={setMyComplaint}/>
+        <ComplaintForm myComplaint={myComplaint} setMyComplaint={setMyComplaint} userid={userid}/>
       </div>
     </>
   )
